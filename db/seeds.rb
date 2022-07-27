@@ -3,6 +3,7 @@
 puts "Deleting movie/actor data..."
 Movie.destroy_all
 Actor.destroy_all
+Roles.destroy_ALL
 
 puts "Creating movies..."
 mean_girls = Movie.create(title: "Mean Girls", box_office_earnings: 129_000_000)
@@ -18,13 +19,13 @@ sporty_spice = Actor.create(name: "Melanie Chisholm")
 posh_spice = Actor.create(name: "Victoria Addams")
 
 puts "Creating roles..."
-r1 = Role.create(salary: 50_000_000, character_name: "Super Woman", movie_id: mean_girls.id, actor_id: lindsay_lohan.id)
-r2 = Role.create(salary: 60_000_000, character_name: "Villan", movie_id: mean_girls.id, actor_id: tina_fey.id)
-r3 = Role.create(salary: 80_000_000, character_name: "Baby Spice", movie_id: spice_world.id, actor_id: baby_spice.id)
-r4 = Role.create(salary: 100_000_000, character_name: "Ginger Spice", movie_id: spice_world.id, actor_id: ginger_spice.id)
-r5 = Role.create(salary: 30_000_000, character_name: "Scary Spice", movie_id: spice_world.id, actor_id: scary_spice.id)
-r6 = Role.create(salary: 2_000_000, character_name: "Sporty Spice", movie_id: spice_world.id, actor_id: sporty_spice.id)
-r7 = Role.create(salary: 10_000_000, character_name: "Posh Spice", movie_id: spice_world.id, actor_id: posh_spice.id)
+Role.create(salary: 1, character_name: "Super Woman", movie_id: mean_girls.id, actor_id: lindsay_lohan.id)
+Role.create(salary: 2, character_name: "Villan", movie_id: mean_girls.id, actor_id: tina_fey.id)
+Role.create(salary: 3, character_name: "Baby Spice", movie_id: spice_world.id, actor_id: baby_spice.id)
+Role.create(salary: 4, character_name: "Ginger Spice", movie_id: spice_world.id, actor_id: ginger_spice.id)
+Role.create(salary: 5, character_name: "Scary Spice", movie_id: spice_world.id, actor_id: scary_spice.id)
+Role.create(salary: 6, character_name: "Sporty Spice", movie_id: spice_world.id, actor_id: sporty_spice.id)
+Role.create(salary: 7, character_name: "Posh Spice", movie_id: spice_world.id, actor_id: posh_spice.id)
 
 
 puts "Seeding done!"

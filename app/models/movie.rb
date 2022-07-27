@@ -6,11 +6,11 @@ class Movie < ActiveRecord::Base
         Role.create(actor: actor, character_name: character_name, salary: salary, movie: self)
     end
 
-    # def all_credits
-    #     Roles.all = [credit] 
-    # end
+    def all_credits
+        roles.map(&:credit)
+    end
 
-    # def fire_actor(actor)
-    #     actor.destroy
-    # end
+    def fire_actor(actor)
+        Role.find_by(actor_id: actor.id, movie_id: self.id).destroy
+    end
 end
